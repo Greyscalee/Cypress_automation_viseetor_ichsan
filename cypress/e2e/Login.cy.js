@@ -2,6 +2,7 @@ const LoginPage = require ('../support/Page/LoginPage');
 const userdata = require ('../support/dataTest/datauser');
 const login_loc = require ('../support/Locators/loginLocator');
 const dashboard_loc  = require ('../support/Locators/DashboardLocator');
+const loginLocator = require('../support/Locators/loginLocator');
 
 
 describe('User should be able to login', () => {
@@ -19,11 +20,9 @@ describe('User should be able to login', () => {
 })
 it('with invalid data', () => {
   cy.xpath(login_loc.datatest.logo).should('be.visible');
-  LoginPage.type_email(userdata.data_param.email);
-  LoginPage.type_password(userdata.data_param.pass);
+  LoginPage.type_email(userdata.data_param_2.email);
+  LoginPage.type_password(userdata.data_param_2.pass);
   LoginPage.loginbtn(), { timeout: 10000 };
-  cy.xpath(dashboard_loc.datatest.logo).should('be.visible');
-  cy.xpath(dashboard_loc.datatest.dash_logo).should('be.visible')
-  
+  cy.xpath(loginLocator.datatest.login_failed_1).should('be.visible');
 })
 })

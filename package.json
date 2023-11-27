@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx cypress open"
+    "start": "npx cypress open",
+    "test": "npx cypress run"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.0",
     "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.7.0"
   }
 }
